@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <title>L'antonoir à Sel</title>
+
+    <meta property="og:image:url" content="https://www.epicerie-pro.com/images/Image/https-www-epicerie-pro-com-images-Image-sel-dosette-1.jpg">
+    <meta property="og:title" content="L'antonoir à Sel" />
+    <meta property="og:description" content="On est sur la Sel-lette, ta pigé ? Viens collecter du Sel avec nous et remporte ton brassar ;)" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://bore.pub:5353" />
+</head>
+<body>
+    <main>
+        <div class="card">
+            <div class="percent" style="--color: #00ff7f;--prg: 85.2;">
+                <svg>
+                    <circle cx="70" cy="70" r="70"></circle>
+                    <circle cx="70" cy="70" r="70"></circle>
+                </svg>
+                <div class="number">
+                    <h2>85.2<span>%</span></h2>
+                    <p>Objectif</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <h2>1065</h2>
+            <p>Nombre de sachets</p>
+        </div>
+        <div class="card">
+            <h2>5 Sept.</h2>
+            <p>Démarage</p>
+        </div>
+        <div class="card">
+            <h2>1000g</h2>
+            <p>Objectif</p>
+        </div>
+        <div class="card">
+            <h2>852g</h2>
+            <p>Poids net</p>
+        </div>
+        <div class="emptycard">
+
+        </div>
+        <div class="card">
+            <h2>67</h2>
+            <p>Moyenne cotidienne de sachets</p>
+        </div>
+        <div class="card">
+            <h2>148</h2>
+            <p>Nombre de sachets restants</p>
+        </div>
+        <div class="card">
+            <h2>2500g</h2>
+            <p>Prochain objectif</p>
+        </div>
+        
+    </main>
+    <div class="graphs">
+        <canvas id="graph1" style="width:90%;max-height: 90%;margin-right: 10;"></canvas>
+
+    </div>
+    <div class="graphs">
+        <canvas id="graph2" style="width:90%;max-height: 90%;margin-right: 10;"></canvas>
+    </div>
+    <script src="./scripts/grapher.js"></script>
+    <!-- <script src="scripts/grabber.js"></script> -->
+</body>
+</html>
