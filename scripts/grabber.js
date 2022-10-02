@@ -32,7 +32,7 @@ function setNbSachets(n) {
 
 function setObjectif(n) {
   objectif = n
-  setvalue(4,n);
+  setvalue(4,n+"g");
 }
 
 function setAverage(n) {
@@ -45,14 +45,17 @@ function setAverages(averages) {
   } 
 }
 
-fetch(url)
-.then(d => d.json())
-.then(data => {
-  setObjectif(data["objectif"]);
-  setvalue(9, data["prochainObjectif"]);
-  setNbSachets(data["nombreSachets"]);
-  setAverage(data["moyenne"]);
-  setAverages(data["moyennes"]);
-}).catch(err => {
-  console.log(err)
-})
+function updateData() {
+  fetch(url)
+  .then(d => d.json())
+  .then(data => {
+    setObjectif(data["objectif"]);
+    setvalue(9, data["prochainObjectif"]);
+    setNbSachets(data["nombreSachets"]);
+    setAverage(data["moyenne"]);
+    setAverages(data["moyennes"]);
+  }).catch(err => {
+    console.log(err)
+  });
+}
+updateData();
