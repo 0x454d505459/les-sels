@@ -73,10 +73,11 @@ function updateData() {
   .then(d=>d.json())
   .then(data=>{
     sachets = 0;
-    graph1.data.datasets[0].data = [];
-    graph2.data.datasets[0].data = [];
+    graph1.clear();
+    graph2.clear();
     dates = [];
-    for (let i = data.length -1; i>=0;i--){
+    graph2.data.datasets[0].data = []
+    for (let i = 0; i<=data.length-1;i++){
       let sel = parseInt(data[i]["sel"]);
       sachets += sel;
       dates.push(data[i]["date"]);
@@ -84,6 +85,8 @@ function updateData() {
       graph2.data.datasets[0].data.push(sachets);
     }
     // console.log(graph1.data.datasets[0].data);
+    graph1.data.labels = dates;
+    graph2.data.labels = dates;
     graph1.update();
     graph2.update();
     setNbSachets(sachets);
