@@ -34,9 +34,9 @@ main .emptycard {
 
 .graphs {
     position: relative;
-    width: 720px;
+    width: 1180px;
     /* max-width: 220px; */
-    height: 400px;
+    height: 600px;
     /* margin-top: 20px; */
     background-color: hsl(210, 6%, 13%);
     border-radius: 10px;
@@ -104,7 +104,7 @@ main .card {
     position: relative;
     width: 220px;
     /* max-width: 220px; */
-    height: 250px;
+    height: 220px;
     background-color: hsl(210, 6%, 13%);
     border-radius: 10px;
     -webkit-box-shadow: 0px 1px 15px -5px rgba(0,0,0,0.29); 
