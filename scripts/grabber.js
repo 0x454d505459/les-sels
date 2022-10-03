@@ -34,8 +34,8 @@ function setNbSachets(n) {
   setvalue(5, (n*0.8).toFixed(1) + "g");
   let progress = (((n*100)/objectif)*0.8).toFixed(1);
   setProgress(progress);
-  setvalue(7, Math.round(((100 - progress)/100)*objectif)); // Incorrect
-  setvalue(9, ((1.69/100)*n).toFixed(2) + "€")
+  setvalue(7, objectif/0.8-sachets); // Incorrect
+  setvalue(9, ((1.69/100)*n).toFixed(2) + " €")
 }
 
 function setObjectif(n) {
@@ -74,16 +74,18 @@ function updateData() {
   .then(data=>{
     sachets = 0;
     graph1.data.datasets[0].data = [];
+    graph2.data.datasets[0].data = [];
     dates = [];
-    graph1.update();
     for (let i = data.length -1; i>=0;i--){
       let sel = parseInt(data[i]["sel"]);
       sachets += sel;
       dates.push(data[i]["date"]);
       graph1.data.datasets[0].data.push(sel);
+      graph2.data.datasets[0].data.push(sachets);
     }
     // console.log(graph1.data.datasets[0].data);
     graph1.update();
+    graph2.update();
     setNbSachets(sachets);
   });
   
