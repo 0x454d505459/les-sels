@@ -1,6 +1,6 @@
 const 
-  url = "http://les-sels.ml/api/days/",
-  averagesEndPoint = "http://les-sels.ml/api/averages/",
+  url = "https://les-sels.ml/api/days/",
+  averagesEndPoint = "https://les-sels.ml/api/averages/",
   callback = "https://raw.githubusercontent.com/0x454d505459/les-sels/stats/data.json";
 
 
