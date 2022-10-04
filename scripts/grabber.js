@@ -44,7 +44,7 @@ function setObjectif(n) {
 }
 
 function setAverage(n) {
-  setvalue(7, n)
+  setvalue(6, n)
 }
 
 function setAverages(averages) {
@@ -57,7 +57,8 @@ function updateData() {
   fetch(averagesEndPoint)
   .then(d=>d.json())
   .then(data => {
-    setAverages([data["average_monday"],data["average_tuesday"],data["average_wednesday"],data["average_thursday"],data["average_friday"]])
+    setAverages([data["average_monday"],data["average_tuesday"],data["average_wednesday"],data["average_thursday"],data["average_friday"]]);
+    setAverage( ((data["average_monday"] + data["average_tuesday"] + data["average_wednesday"] + data["average_thursday"] +  data["average_friday"])/5).toFixed(1) )
   }).catch(err => console.log(err))
   // // fetch for callback url
   // fetch(callback)
