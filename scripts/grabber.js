@@ -11,7 +11,7 @@ const
 
 // objectif en grammes  
 var 
-  objectif = 1000,
+  objectif = 2500,
   sachets = 1065;
 
 function setProgress(prg) {
@@ -90,6 +90,7 @@ function updateData() {
     graph2.data.labels = dates;
     graph1.update();
     graph2.update();
+    setObjectif(objectif);
     setNbSachets(sachets);
   });
   
