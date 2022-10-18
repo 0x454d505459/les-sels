@@ -75,7 +75,14 @@ function estimationEnding(remaning) {
 }
 
 nbSachets.addEventListener("change", () => {
-    setNbSachets(nbSachets.value)
+    if (nbSachets.value.match(/\d+/g)) {
+        console.log("matches")
+        setNbSachets(nbSachets.value);
+        nbSachets.style.color = "white";
+    }
+    else {
+        nbSachets.style.color = "red";
+    }
 })
 
 function updateData() {
