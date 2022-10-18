@@ -5,7 +5,8 @@ const url = "https://les-sels.ml/api/days/",
 // Elements
 const percent = document.querySelector(".percent"),
     number = document.querySelector(".number h2"),
-    nbSachets = document.querySelector("input");
+    nbSachets = document.querySelector("input"),
+    objectifInput = document.querySelectorAll("input")[1];
 
 // objectif en grammes
 var objectif = 2500,
@@ -38,7 +39,8 @@ function setNbSachets(n) {
 
 function setObjectif(n) {
     objectif = n;
-    setvalue(4, n + "g");
+    // setvalue(4, n + "g");
+    objectifInput.value = n + "g";
 }
 
 function setAverage(n) {
@@ -76,12 +78,22 @@ function estimationEnding(remaning) {
 
 nbSachets.addEventListener("change", () => {
     if (nbSachets.value.match(/\d+/g)) {
-        console.log("matches")
         setNbSachets(nbSachets.value);
         nbSachets.style.color = "white";
     }
     else {
         nbSachets.style.color = "red";
+    }
+})
+
+objectifInput.addEventListener("change", () => {
+    if (objectifInput.value.match(/\d/g)) {
+        setObjectif(objectifInput.value);
+        objectifInput.style.color = "white";
+        setNbSachets(sachets)
+    }
+    else {
+        objectifInput.style.color = "red";
     }
 })
 
