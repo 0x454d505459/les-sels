@@ -73,15 +73,14 @@ function estimationEnding(remaning) {
     let nowDate = new Date();
     nowDate.setDate(nowDate.getDate() + e);
     console.log(nowDate);
-    setvalue2(9, nowDate.getDate() + " " + month[nowDate.getMonth()] + " " + nowDate.getFullYear());
+    setvalue2(7, nowDate.getDate() + " " + month[nowDate.getMonth()] + " " + nowDate.getFullYear());
 }
 
 nbSachets.addEventListener("change", () => {
     if (nbSachets.value.match(/\d+/g)) {
         setNbSachets(nbSachets.value);
         nbSachets.style.color = "white";
-    }
-    else {
+    } else {
         nbSachets.style.color = "red";
     }
 })
@@ -91,8 +90,7 @@ objectifInput.addEventListener("change", () => {
         setObjectif(objectifInput.value);
         objectifInput.style.color = "white";
         setNbSachets(sachets)
-    }
-    else {
+    } else {
         objectifInput.style.color = "red";
     }
 })
