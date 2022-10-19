@@ -26,6 +26,7 @@ function setvalue(value, data) {
 function setvalue2(value, data) {
   document.querySelectorAll(`.card h2`)[value].innerHTML = data;
 }
+console.log(document.querySelectorAll(`.card h2`));
 
 function setNbSachets(n) {
   sachets = n;
@@ -51,7 +52,8 @@ function setAverage(n) {
 
 function setAverages(averages) {
   for (let i = 0; i < averages.length; i++) {
-    setvalue2(i + 10, averages[i]);
+    setvalue2(i + 8, averages[i]);
+    console.log(i);
   }
 }
 
@@ -125,7 +127,11 @@ function updateData() {
         ).toFixed(1)
       );
     })
-    .catch((err) => console.log(err));
+    .catch((err) => {
+      console.log(err);
+      document.getElementById("error").innerHTML =
+        "Erreur lors de la récupération des données : " + err;
+    });
   // // fetch for callback url
   // fetch(callback)
   // .then(d => d.json())
