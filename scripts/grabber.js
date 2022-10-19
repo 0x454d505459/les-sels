@@ -73,6 +73,7 @@ function estimationEnding(remaning) {
     "Déc.",
   ];
   let e = objectif / 0.8 / remaning;
+  e = e + 2 * Math.round(e / 7);
   let nowDate = new Date();
   nowDate.setDate(nowDate.getDate() + e);
   console.log(e);
