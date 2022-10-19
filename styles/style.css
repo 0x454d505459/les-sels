@@ -182,8 +182,9 @@ main .card .percent svg circle:nth-child(2) {
   letter-spacing: 1px;
 }
 
-main .card h2 {
-  font-size: 1.3m;
+main .card h2,
+main .card input {
+  font-size: 1.3em;
   font-weight: 700;
   /* letter-spacing: px; */
 }
@@ -214,5 +215,10 @@ input {
 @media screen and (max-width: 522px) {
   main .card {
     width: 90vw;
+  }
+}
+@media only screen and (max-width: 760px) {
+  main .card {
+    width: 45vw;
   }
 }
