@@ -10,7 +10,7 @@ const percent = document.querySelector(".percent"),
   objectifInput = document.querySelectorAll("input")[1];
 
 // objectif en grammes
-var objectif = 2500,
+var objectif = 5000,
   sachets = 1065,
   average = 80;
 
