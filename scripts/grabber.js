@@ -26,7 +26,6 @@ function setvalue(value, data) {
 function setvalue2(value, data) {
   document.querySelectorAll(`.card h2`)[value].innerHTML = data;
 }
-console.log(document.querySelectorAll(`.card h2`));
 
 function setNbSachets(n) {
   sachets = n;
@@ -53,7 +52,6 @@ function setAverage(n) {
 function setAverages(averages) {
   for (let i = 0; i < averages.length; i++) {
     setvalue2(i + 8, averages[i]);
-    console.log(i);
   }
 }
 
@@ -76,7 +74,6 @@ function estimationEnding(remaning) {
   e = e + 2 * Math.round(e / 7);
   let nowDate = new Date();
   nowDate.setDate(nowDate.getDate() + e);
-  console.log(e);
   setvalue2(
     7,
     nowDate.getDate() +
@@ -107,6 +104,7 @@ objectifInput.addEventListener("change", () => {
 });
 
 function updateData() {
+  console.info("Fetching /api/averages/");
   fetch(averagesEndPoint)
     .then((d) => d.json())
     .then((data) => {
@@ -143,6 +141,7 @@ function updateData() {
   // setAverage(data["moyenne"]);
   // setAverages(data["moyennes"]);
   // }).catch(err => console.log(err));
+  console.info("Fetching /api/days/");
   fetch(url)
     .then((d) => d.json())
     .then((data) => {
@@ -152,9 +151,9 @@ function updateData() {
       dates = [];
       graph2.data.datasets[0].data = [];
       for (let i = 0; i <= data.length - 1; i++) {
-        let sel = parseInt(data[i]["sel"]);
+        let sel = parseInt(Object.values(data[i])[0]["count"]["sel_midi"]) + parseInt(Object.values(data[i])[0]["count"]["sel_soir"]);
         sachets += sel;
-        dates.push(data[i]["date"]);
+        dates.push(Object.keys(data[i])[0]);
         graph1.data.datasets[0].data.push(sel);
         graph2.data.datasets[0].data.push(sachets);
       }
@@ -167,6 +166,9 @@ function updateData() {
       setNbSachets(sachets);
       estimationEnding(objectif / 0.8 - sachets);
     });
+  
+  console.info("Data updated successfully");
+
 }
 
 updateData();
