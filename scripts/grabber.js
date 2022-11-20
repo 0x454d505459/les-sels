@@ -113,7 +113,14 @@ function updateData() {
         setAverage(((data["average_monday"] + data["average_tuesday"] + data["average_wednesday"] + data["average_thursday"] + data["average_friday"]) / 5).toFixed(1));
     }).catch((err) => {
         console.log(err);
-        document.getElementById("error").innerHTML = "Erreur lors de la récupération des données : " + err;
+        let e = document.getElementById("error")
+        e.style.cssText = `
+        margin-block: 10px;
+        padding: 10px;
+        background-color: #ff5c5c;
+        color: white;
+        border-radius: 10px;`
+        e.innerHTML = "Erreur lors de la récupération des données : " + err;
     });
     // // fetch for callback url
     // fetch(callback)
@@ -151,6 +158,11 @@ function updateData() {
 
     console.info("Data updated successfully");
 
+}
+
+let cross = document.getElementById("cross");
+cross.onclick = function () {
+    document.getElementById("info").remove()
 }
 
 setvalue(3, timeformater.format(Math.round(- diff / (1000 * 60 * 60 * 24)), "days"));

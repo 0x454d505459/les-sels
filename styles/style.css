@@ -222,3 +222,15 @@ input {
     width: 90vw;
   }
 }
+
+#info {
+  margin-block: 10px;
+  padding: 10px;
+  background-color: #496aff;
+  color: white;
+  border-radius: 10px;
+}
+#info span {
+  color:white;
+  cursor: pointer;
+}
